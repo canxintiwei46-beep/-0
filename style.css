@@ -1,0 +1,1041 @@
+* {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #ffffff;
+            color: #292929;
+            font-family:
+                "Noto Sans JP",
+                "Yu Gothic",
+                "Meiryo",
+                sans-serif;
+        }
+
+        /* ページ全体 */
+        .container {
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto;
+            padding: 42px 16px 50px;
+        }
+
+
+
+/* =========================
+   初期画面・診断メニュー
+========================= */
+
+.container {
+    max-width: 600px;
+    padding: 45px 22px 60px;
+}
+
+/* ロゴとタイトル */
+.logo {
+    margin: 0 auto 22px;
+    width: 72px;
+    height: 72px;
+}
+.gender-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 45px;
+}
+
+/* 性別ボタン */
+.gender-options {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.gender-button {
+    flex: 1;
+    justify-content: center;
+    padding: 12px 8px;
+}
+
+/* メニュー説明 */
+.menu-description {
+    margin: -3px 0 18px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* 診断カード */
+.diagnosis-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.diagnosis-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    min-height: 145px;
+    padding: 19px 15px;
+    background: #ffffff;
+    border: 1px solid #e0e5df;
+    border-radius: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: inherit;
+}
+
+.diagnosis-card:hover {
+    background: #f4f7f3;
+    border-color: #8da292;
+    transform: translateY(-2px);
+}
+
+.diagnosis-card.selected {
+    background: #f0f4f0;
+    border: 2px solid #536b59;
+    padding: 18px 14px;
+}
+
+.card-icon {
+    font-size: 27px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #37483d;
+}
+
+.card-description {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.6;
+}
+.diagnosis-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.diagnosis-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 170px;
+    padding: 25px 15px;
+
+    background: #ffffff;
+    border: 1px solid #e0e5df;
+    border-radius: 16px;
+
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: inherit;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.diagnosis-card:hover {
+    background: #f3f7f3;
+    border-color: #536b59;
+    transform: translateY(-3px);
+}
+
+.diagnosis-card.selected {
+    border: 2px solid #536b59;
+    background: #f0f5f0;
+}
+
+/* 総合診断 */
+.total-diagnosis-card {
+    margin-top: 22px;
+    padding: 18px;
+    background: #f4f5f1;
+    border: 1px solid #e3e6e0;
+    border-radius: 13px;
+    opacity: 0.55;
+}
+
+.total-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.locked-label {
+    margin-left: auto;
+    padding: 4px 9px;
+    border-radius: 20px;
+    background: #e2e4df;
+    color: #666;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* 運動タイプランキング */
+.ranking-card {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #f8faf6;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.ranking-card h3 {
+    font-size: 22px;
+    color: #52634d;
+    margin-bottom: 5px;
+}
+
+.ranking-subtitle {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    margin-top: 10px;
+    background: white;
+    border-radius: 14px;
+    text-align: left;
+}
+
+.ranking-medal {
+    font-size: 27px;
+}
+
+.ranking-emoji {
+    font-size: 30px;
+}
+
+.ranking-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+}
+
+.ranking-1 {
+    border: 2px solid #e8d49c;
+}
+
+.ranking-2 {
+    border: 2px solid #d8dce0;
+}
+
+.ranking-3 {
+    border: 2px solid #dfc0a9;
+}
+
+/* =========================
+   質問画面のレイアウト
+========================= */
+
+.question-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 30px;
+    align-items: center;
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 22px;
+    background: var(--question-bg, #f8f8f8);
+    transition: background 0.3s;
+}
+
+/* 左側の画像 */
+
+.question-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
+.question-illustration img {
+    width: 100%;
+    max-width: 340px;
+    height: 260px;
+    object-fit: contain;
+}
+
+/* 右側の質問エリア */
+
+.question-content {
+    min-width: 0;
+    text-align: center;
+}
+
+#question-category {
+    display: inline-block;
+    padding: 7px 16px;
+    border-radius: 20px;
+    background: var(--question-accent, #e8e8e8);
+    color: #444;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+#question-text {
+    font-size: 21px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* 選択肢 */
+
+#rating-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#rating-options button,
+#rating-options label {
+    background: var(--question-option, #fff);
+    border: 1px solid var(--question-accent, #ddd);
+    border-radius: 12px;
+    padding: 13px;
+    transition: 0.2s;
+}
+
+/* 選択時 */
+
+#rating-options button:hover,
+#rating-options label:hover {
+    background: var(--question-accent, #eee);
+}
+
+/* 前へ・次へ */
+
+.question-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.question-buttons button {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+/* 5段階評価の選択肢 */
+.rating-button {
+    background: var(--question-option, #ffffff);
+    border: 1px solid var(--question-accent, #dddddd);
+    border-radius: 12px;
+    padding: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #444;
+}
+
+.rating-button:hover {
+    background: var(--question-accent, #eeeeee);
+}
+
+.rating-button.selected {
+    background: var(--question-accent, #dddddd);
+    border: 2px solid var(--question-accent, #cccccc);
+    font-weight: bold;
+}
+
+/* 評価の選択肢 */
+.rating-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.rating-button {
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+    padding: 10px 5px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #444 !important;
+    background: var(--question-option, #fff);
+    border: 1px solid var(--question-accent, #ddd);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* 選択した数字 */
+.rating-button.selected {
+    background: var(--question-accent, #ddd) !important;
+    color: #222 !important;
+    border: 2px solid #777;
+    font-weight: bold;
+}
+
+
+
+.rating-labels span:last-child {
+    text-align: right;
+}
+
+
+/* 評価ラベルを常に上下に配置 */
+.rating-labels {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 12px;
+    color: #555;
+}
+
+.rating-labels span:last-child {
+    text-align: left;
+}
+
+/* スマホ */
+@media screen and (max-width: 700px) {
+    .rating-options {
+        gap: 6px;
+    }
+
+    .rating-button {
+        min-height: 46px;
+        padding: 10px 2px;
+        font-size: 16px;
+    }
+
+    .rating-labels {
+        font-size: 11px;
+        margin-top: 8px;
+    }
+
+    .question-content {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+
+/* =========================
+   スマホ対応
+========================= */
+
+@media screen and (max-width: 700px) {
+
+    .question-layout {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .question-illustration img {
+        max-width: 220px;
+        height: 145px;
+    }
+
+    #question-text {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    #rating-options {
+        gap: 8px;
+    }
+
+    #rating-options button,
+    #rating-options label {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .question-buttons {
+        margin-top: 20px;
+    }
+}
+
+
+.total-diagnosis-card p {
+    margin: 10px 0 0;
+    color: #777;
+    font-size: 13px;
+}
+
+/* 非表示のカテゴリー選択欄 */
+.category-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+/* スマホ */
+@media (max-width: 380px) {
+    .container {
+        padding: 30px 15px 45px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .diagnosis-menu {
+        gap: 10px;
+    }
+
+    .diagnosis-card {
+        padding: 15px 11px;
+        min-height: 140px;
+    }
+
+    .card-title {
+        font-size: 14px;
+    }
+}
+
+        .animal-header {
+    width: 100%;
+    margin: 0 auto 15px;
+    text-align: center;
+}
+
+.animal-header img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto;
+}
+
+        /* タイトル */
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin: 0 0 58px;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        /* 質問ブロック */
+        .question {
+            margin-bottom: 42px;
+        }
+
+        .question-title {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin: 0 0 12px;
+            font-size: 19px;
+            font-weight: 700;
+        }
+
+        /* 必須マーク */
+        .required {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            background: #eeeeee;
+            color: #444444;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        
+
+        .gender-button {
+            align-items: center;
+            flex-direction: row;
+            gap: 10px;
+            min-height: 38px;
+            padding: 7px 11px;
+            background: #ffffff;
+            color: #292929;
+            border: 1px solid #d2d2d2;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        /* A・B・Cのマーク */
+        .option-letter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            background: #666666;
+            color: #ffffff;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .gender-button:hover {
+            background: #f7f7f7;
+        }
+
+        .gender-button.selected {
+            border-color: #536b59;
+            background: #f0f4f0;
+        }
+
+        .gender-button.selected .option-letter {
+            background: #536b59;
+        }
+
+        /* 健康分野のプルダウン */
+        .select-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .category-select {
+            width: 100%;
+            min-height: 42px;
+            padding: 10px 13px;
+            background-color: #ffffff;
+            color: #333333;
+            border: 1px solid #cccccc;
+            border-radius: 9px;
+            font-size: 15px;
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .category-select:focus {
+            border-color: #8bb9f8;
+            box-shadow: 0 0 0 4px rgba(139, 185, 248, 0.3);
+        }
+
+        /* 次へボタン */
+        .next-button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 9px;
+            background: #536b59;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .next-button:hover {
+            background: #405646;
+        }
+
+        .error-message {
+            margin: 10px 0 0;
+            color: #b42318;
+            font-size: 13px;
+        }
+
+        /* 結果表示エリア */
+        #next-step {
+            display: none;
+            margin-top: 28px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #f4f5f1;
+            line-height: 1.8;
+        }
+
+        #next-step h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        @media (max-width: 380px) {
+            .container {
+                padding-top: 30px;
+            }
+
+            h1 {
+                font-size: 30px;
+                margin-bottom: 45px;
+            }
+
+            .logo {
+                width: 85px;
+                height: 85px;
+                margin-bottom: 38px;
+            }
+
+            .question-title {
+                font-size: 17px;
+            }
+        }
+   
+   
+   
+/* 動物タイプの診断結果 */
+.animal-result {
+    margin: 22px 0;
+    padding: 24px 20px;
+    text-align: center;
+    background: #f4f5f1;
+    border: 1px solid #e1e5dc;
+    border-radius: 16px;
+}
+
+.animal-emoji {
+    font-size: 64px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.animal-result h3 {
+    margin: 8px 0;
+    font-size: 24px;
+    color: #405b49;
+}
+
+#animal-catchphrase {
+    color: #667568;
+    margin-bottom: 24px;
+}
+
+.animal-description {
+    padding: 15px;
+    margin-top: 12px;
+    text-align: left;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.animal-description h4 {
+    margin: 0 0 8px;
+    color: #405b49;
+}
+
+.animal-description p {
+    margin: 0;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+     
+        
+        
+/* 診断画面 */
+#question-screen,
+#result-screen {
+    display: none;
+    margin-top: 25px;
+}
+
+.question-progress {
+    height: 7px;
+    background: #e8eae6;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0 25px;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #536b59;
+    transition: width 0.25s;
+}
+
+.question-card {
+    padding: 22px 18px;
+    border: 1px solid #e2e5df;
+    border-radius: 14px;
+    margin-bottom: 18px;
+}
+
+.question-category {
+    color: #536b59;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.question-text {
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.rating-options {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.rating-button {
+    min-height: 48px;
+    border: 1px solid #d5d9d2;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #333333;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.rating-button.selected {
+    color: #ffffff;
+    background: #536b59;
+    border-color: #536b59;
+}
+
+.rating-labels {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 9px;
+    font-size: 12px;
+    color: #777777;
+}
+
+.question-navigation {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.question-navigation button {
+    flex: 1;
+}
+
+.secondary-button {
+    padding: 13px;
+    border: 1px solid #cdd3ca;
+    border-radius: 9px;
+    background: white;
+    color: #37483d;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.secondary-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.score-number {
+    font-size: 46px;
+    font-weight: 800;
+    color: #536b59;
+    text-align: center;
+    margin: 18px 0;
+}
+
+.score-detail {
+    padding: 14px;
+    background: #f4f5f1;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+
+.score-detail p {
+    margin: 5px 0;
+}
+
+
+/* 健康タイプ図鑑 */
+.catalog-card {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #f8faf6;
+    border-radius: 20px;
+}
+
+.catalog-card h3 {
+    text-align: center;
+    font-size: 23px;
+    color: #52634d;
+    margin-bottom: 5px;
+}
+
+.catalog-subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 22px;
+}
+
+/* カテゴリーの折りたたみ */
+.catalog-category {
+    margin-top: 12px;
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #e5e9e1;
+    overflow: hidden;
+}
+
+.catalog-category summary {
+    padding: 17px 20px;
+    font-weight: bold;
+    color: #52634d;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 45px;
+}
+
+.catalog-category summary::-webkit-details-marker {
+    display: none;
+}
+
+.catalog-category summary::after {
+    content: "＋";
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    color: #8b9b80;
+}
+
+.catalog-category[open] summary::after {
+    content: "−";
+}
+
+/* タイプ一覧 */
+.catalog-list {
+    padding: 5px 15px 15px;
+}
+
+.catalog-item {
+    padding: 15px 5px;
+    border-top: 1px solid #edf0ea;
+}
+
+.catalog-item-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #444;
+    font-size: 16px;
+}
+
+.catalog-emoji {
+    font-size: 27px;
+}
+
+.catalog-catchphrase {
+    margin: 7px 0 5px 37px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #788b6e;
+}
+
+.catalog-description {
+    margin-left: 37px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    .catalog-card {
+        padding: 18px 12px;
+    }
+
+    .catalog-category summary {
+        padding: 15px;
+        padding-right: 40px;
+    }
+
+    .catalog-description,
+    .catalog-catchphrase {
+        margin-left: 0;
+    }
+}
+
+
+/* 項目別スコア・横棒グラフ */
+#category-scores {
+    margin: 22px 0;
+}
+
+.score-bar-item {
+    margin-bottom: 19px;
+}
+
+.score-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.score-bar-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #37483d;
+}
+
+.score-bar-number {
+    font-size: 13px;
+    color: #667568;
+    white-space: nowrap;
+}
+
+.score-bar-track {
+    width: 100%;
+    height: 12px;
+    background: #e8eae6;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.score-bar-fill {
+    height: 100%;
+    background: #66836d;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+@media (max-width: 380px) {
+    .question-card {
+        padding: 17px 12px;
+    }
+
+    .question-text {
+        font-size: 16px;
+    }
+
+    .rating-options {
+        gap: 5px;
+    }
+}
+

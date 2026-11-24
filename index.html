@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康タイプ診断</title>
+	 <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <main class="container">
+
+        <div class="animal-header">
+    <img src="a_cute_soft_pastel_flat_cartoon_illustration_in.png"
+         alt="健康タイプ診断の動物たち">
+</div>
+
+        <!-- タイトル -->
+        <h1>健康タイプ診断</h1>
+
+        <form id="diagnosis-form">
+
+            <!-- 性別 -->
+            <section class="question">
+                <h2 class="question-title">
+                    性別を選択してください
+                    <span class="required" aria-label="必須">*</span>
+                </h2>
+
+                <div class="gender-options" role="group"
+                     aria-label="性別を選択">
+
+                    <button type="button"
+                            class="gender-button"
+                            data-gender="男性"
+                            aria-pressed="false">
+                        <span class="option-letter">A</span>
+                        男性
+                    </button>
+
+                    <button type="button"
+                            class="gender-button"
+                            data-gender="女性"
+                            aria-pressed="false">
+                        <span class="option-letter">B</span>
+                        女性
+                    </button>
+
+                    <button type="button"
+                            class="gender-button"
+                            data-gender="その他"
+                            aria-pressed="false">
+                        <span class="option-letter">C</span>
+                        その他
+                    </button>
+                </div>
+            </section>
+
+            <!-- 健康分野 -->
+<section class="question">
+    <h2 class="question-title">
+        どの健康分野について診断しますか？
+        <span class="required">*</span>
+    </h2>
+
+    <div class="diagnosis-menu">
+    <button type="button" class="diagnosis-card" data-category="運動">
+        🏃 運動診断
+    </button>
+
+    <button type="button" class="diagnosis-card" data-category="食事">
+        🍽️ 食事診断
+    </button>
+
+    <button type="button" class="diagnosis-card" data-category="睡眠">
+        🌙 睡眠診断
+    </button>
+
+    <button type="button" class="diagnosis-card" data-category="メンタルヘルス">
+        🧠 メンタル診断
+    </button>
+</div>
+
+    <select id="category" class="category-hidden" required>
+        <option value="" selected disabled>選択してください</option>
+        <option value="運動">運動</option>
+        <option value="食事">食事</option>
+        <option value="睡眠">睡眠</option>
+        <option value="メンタルヘルス">メンタルヘルス</option>
+    </select>
+</section>
+
+            <button type="submit" class="next-button">
+                診断をはじめる
+            </button>
+
+            <p id="error-message"
+               class="error-message"
+               role="alert"
+               hidden></p>
+        </form>
+
+        
+
+<!-- 診断の質問画面 -->
+<section id="question-screen">
+
+    <p id="question-count"></p>
+
+    <div class="question-progress">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- 画像と質問を横並びにするエリア -->
+    <div class="question-layout">
+
+        <!-- 左側：カテゴリ別イラスト -->
+        <div id="question-illustration" class="question-illustration">
+        </div>
+
+        <!-- 右側：質問と選択肢 -->
+        <div class="question-content">
+
+            <div id="question-category" class="question-category"></div>
+
+            <div id="question-text" class="question-text"></div>
+
+            <div id="rating-options" class="rating-options"></div>
+
+            <div class="rating-labels">
+                
+
+        </div>
+    </div>
+
+    <p id="question-error" class="error-message" hidden>
+        回答を選択してください。
+    </p>
+
+    <div class="question-navigation">
+        <button type="button" id="previous-button"
+                class="secondary-button">
+            戻る
+        </button>
+
+        <button type="button" id="next-button"
+                class="next-button">
+            次へ
+        </button>
+    </div>
+
+</section>
+
+
+
+<!---------------------------- 診断結果画面 -------------------------->
+<!-- 診断結果画面 -->
+<section id="result-screen">
+    <h2>あなたの運動タイプ診断結果</h2>
+
+    
+<div id="animal-result" class="animal-result">
+    <div id="animal-emoji" class="animal-emoji">🐕</div>
+    <h3 id="animal-name">アクティブ犬</h3>
+    <p id="animal-catchphrase"></p>
+
+    <div class="animal-description">
+        <h4>あなたの特徴</h4>
+        <p id="animal-traits"></p>
+    </div>
+
+    <div class="animal-description">
+        <h4>おすすめアドバイス</h4>
+        <p id="animal-advice"></p>
+    </div>
+</div>
+<div class="total-score">
+        <h3>総合スコア</h3>
+        <p><span id="total-score">0</span> / 100 点</p>
+    </div>
+    <div id="category-scores"></div>
+	<p id="result-message"></p>
+
+    <button type="button" id="retry-button"
+            class="next-button">
+        もう一度診断する
+    </button>
+</section>
+
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
